@@ -29,17 +29,17 @@ function App() {
 
   return (
     <>
-      <div>
-        <div>
+      <div className="container">
+        <div className="user-display">
           <h1>Dados do Usuário</h1>
-          <div>
+          <div className="user-info">
             <p><strong>Nome:</strong> {dadosAtualizados.nome || '-'}</p>
             <p><strong>Idade:</strong> {dadosAtualizados.idade || '-'}</p>
             <p><strong>CPF:</strong> {dadosAtualizados.CPF || '-'}</p>
           </div>
         </div>
 
-        <div>
+        <div className="input-group">
           <label>Nome: </label>
           <input
             type="text"
@@ -49,7 +49,7 @@ function App() {
           <button onClick={() => handleAtualizar('nome')}>Alterar Nome</button>
         </div>
 
-        <div>
+        <div className="input-group">
           <label>Idade: </label>
           <input
             type="number"
@@ -59,7 +59,7 @@ function App() {
           <button onClick={() => handleAtualizar('idade')}>Alterar Idade</button>
         </div>
 
-        <div>
+        <div className="input-group">
           <label>CPF: </label>
           <input
             type="text"

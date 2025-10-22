@@ -1,42 +1,145 @@
+:root {
+  --retro-pink: #ff1b8d;
+  --retro-blue: #00d9ff;
+  --retro-purple: #b537f2;
+  --retro-yellow: #ffdd00;
+  --retro-cyan: #00fff0;
+  --dark-bg: #120b1f;
+  --grid-color: rgba(255, 27, 141, 0.15);
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark-bg), #1a0033);
+  color: var(--retro-cyan);
+  font-family: 'Arial Black', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  text-shadow: 0 0 1px var(--retro-cyan);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(transparent 0%, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, transparent 0%, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: perspective(400px) rotateX(70deg);
+  transform-origin: top;
+  z-index: -1;
+  opacity: 0.5;
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Cabeçalho com dados do usuário */
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--retro-pink), var(--retro-purple), var(--retro-yellow));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 6px var(--retro-purple);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Seção de exibição dos dados */
+div > div:first-of-type {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--retro-blue);
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 10px var(--retro-blue);
 }
 
-.card {
-  padding: 2em;
+/* Dados do usuário */
+p {
+  font-size: 1.3rem;
+  margin: 1.2rem 0;
+  color: var(--retro-cyan);
+  border-bottom: 1px dashed var(--retro-blue);
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 1px var(--retro-cyan);
 }
 
-.read-the-docs {
-  color: #888;
+p strong {
+  color: var(--retro-yellow);
+  margin-right: 15px;
+  letter-spacing: 1px;
+}
+
+/* Container dos inputs */
+div > div:not(:first-of-type) {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-left: 3px solid var(--retro-pink);
+  box-shadow: 0 0 8px var(--retro-pink);
+}
+
+/* Labels */
+label {
+  color: var(--retro-yellow);
+  font-size: 1.1rem;
+  min-width: 80px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 1px var(--retro-yellow);
+}
+
+/* Inputs */
+input {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--retro-blue);
+  color: var(--retro-yellow);
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 0 6px var(--retro-blue);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--retro-purple);
+  box-shadow: 0 0 10px var(--retro-purple);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Botões */
+button {
+  background: linear-gradient(90deg, var(--retro-pink), var(--retro-purple));
+  border: 2px solid var(--retro-yellow);
+  color: var(--retro-cyan);
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px var(--retro-yellow);
+}
+
+button:hover {
+  background: linear-gradient(90deg, var(--retro-yellow), var(--retro-pink));
+  border-color: var(--retro-cyan);
+  color: var(--retro-blue);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px var(--retro-cyan);
 }
